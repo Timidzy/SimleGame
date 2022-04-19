@@ -19,8 +19,12 @@ public class castleIf {
         int brickWidth = myScan.nextInt();
         System.out.println(brickLengthMessage);
         int brickLength = myScan.nextInt();
-        if ((holeHeight >= brickHeight || holeHeight >= brickLength || holeHeight >= brickWidth) &&
-                (holeWidth >= brickHeight || holeWidth >= brickWidth || holeWidth >= brickLength)){
+        int holePerimeter = (holeHeight + holeWidth) * 2;
+        int brickPerimeterOne = (brickHeight + brickLength) * 2;
+        int brickPerimeterTwo = (brickHeight + brickWidth) * 2;
+        int brickPerimeterThree = (brickLength + brickWidth) * 2;
+        if((holePerimeter >= brickPerimeterOne) || (holePerimeter >= brickPerimeterTwo)
+                || (holePerimeter >= brickPerimeterThree)){
             System.out.println("Yes");
         }else System.out.println("No");
     }
